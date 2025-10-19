@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
+  
   const navbar = document.querySelector(".navbar");
 
   toggle.addEventListener("click", function () {
@@ -212,10 +212,8 @@ document.addEventListener('DOMContentLoaded', function() {
             threshold: 0.1
         });
 
-        // Simple fade-in animation for the container
+
         document.querySelector('.about-container').classList.add('fade-in');
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
             const serviceCards = document.querySelectorAll('.service-card');
