@@ -92,8 +92,7 @@
         var tl = heroTl = gsap.timeline({ paused: preloaderActive, defaults: { ease: 'power4.out' } });
 
         tl.from('.hero-eyebrow', { y: 20, autoAlpha: 0, duration: 0.6 })
-          .from(chars, { yPercent: 120, rotate: 6, duration: 1, stagger: 0.018 }, '-=0.3')
-          .from('.home-text .download-cv', { y: 20, autoAlpha: 0, duration: 0.6 }, '-=0.3');
+          .from(chars, { yPercent: 120, rotate: 6, duration: 1, stagger: 0.018 }, '-=0.3');
 
         // Hero drifts up and fades as you scroll away
         gsap.to('#home .home-text', {
@@ -275,7 +274,7 @@
             yPercent: 100, ease: 'none', stagger: 0.04,
             scrollTrigger: { trigger: footerWord, start: 'top bottom', end: 'bottom bottom', scrub: 0.5 }
         });
-        gsap.from('.footer-cta, .footer-col', {
+        gsap.from('.footer-brand, .footer-col', {
             y: 30, autoAlpha: 0, duration: 0.8, ease: 'power3.out', stagger: 0.1,
             scrollTrigger: { trigger: '.footer-v2', start: 'top 85%' }
         });
@@ -283,7 +282,7 @@
 
     // ---- Magnetic buttons (mouse only) ----
     if (window.matchMedia('(pointer: fine)').matches) {
-        gsap.utils.toArray('.download-cv a, .header-btn, .social-link, .about-cta, .contact-submit, .footer-mail, .to-top').forEach(function (btn) {
+        gsap.utils.toArray('.header-btn, .gts, .social-link, .about-cta, .contact-submit, .footer-icon, .to-top').forEach(function (btn) {
             btn.addEventListener('mousemove', function (e) {
                 var r = btn.getBoundingClientRect();
                 gsap.to(btn, {

@@ -2450,73 +2450,74 @@ html {
 
 /* ================= Footer ================= */
 .footer-v2 {
-    padding: clamp(60px, 8vw, 110px) 0 24px;
+    padding: clamp(32px, 4vw, 56px) 0 clamp(24px, 3vw, 40px);
+    border-top: 0;
+}
+
+.footer-card {
+    padding: clamp(28px, 3.5vw, 48px) clamp(22px, 3.5vw, 48px) 22px;
+    border-radius: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
 }
 
 .footer-top {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-    gap: 60px;
-    margin-bottom: clamp(50px, 7vw, 100px);
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
 }
 
-.footer-mail {
+.footer-tagline {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: clamp(24px, 3.2vw, 48px);
-    letter-spacing: -0.03em;
-    color: var(--text);
-    text-decoration: none;
-    word-break: break-word;
-    background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 2px no-repeat;
-    transition: background-size 0.5s cubic-bezier(.2, .8, .2, 1), color 0.3s ease;
-}
-
-.footer-mail i {
-    font-size: 0.6em;
-    color: var(--accent);
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease;
-}
-
-.footer-mail:hover {
-    color: var(--accent);
-    background-size: 100% 2px;
-}
-
-.footer-mail:hover i {
-    transform: rotate(0deg);
-}
-
-.footer-cols {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
-}
-
-.footer-col h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    gap: 10px;
+    margin: 0 0 18px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 18px;
 }
 
-.footer-col ul {
+.footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    background: rgba(255, 255, 255, 0.03);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-icon:hover {
+    color: var(--bg-dark);
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.footer-col {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .footer-col li {
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: var(--text);
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--muted);
 }
 
 .footer-col a {
@@ -2529,18 +2530,20 @@ html {
     color: var(--accent);
 }
 
+/* Name fills the card width (font-size is fitted by script.js) */
 .footer-word {
+    margin-top: clamp(24px, 3vw, 40px);
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: min(10vw, 170px);
-    line-height: 0.95;
+    font-size: 10vw;
+    line-height: 0.9;
     letter-spacing: -0.05em;
     white-space: nowrap;
     text-align: center;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(79, 216, 155, 0.45);
+    -webkit-text-stroke: 1px rgba(79, 216, 155, 0.5);
     overflow: hidden;
-    padding-bottom: 0.05em;
+    padding-bottom: 0.04em;
 }
 
 .footer-bar {
@@ -2548,11 +2551,11 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
-    padding-top: 24px;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 18px;
     border-top: 1px solid var(--border);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
 }
 
@@ -2576,23 +2579,21 @@ html {
     color: var(--text);
 }
 
-@media screen and (max-width: 998px) {
+@media screen and (max-width: 768px) {
     .footer-top {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .footer-cols {
-        grid-template-columns: 1fr 1fr;
-    }
     .footer-bar {
         justify-content: center;
         text-align: center;
     }
 }
-
 
 /* Split-text spans must keep their parent's colour (old ".home-text span" rule made them all green) */
 .home-text .split-word,

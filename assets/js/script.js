@@ -241,3 +241,19 @@ document.querySelectorAll('.work-toggle').forEach(function (btn) {
         btn.querySelector('.work-more-label').textContent = open ? 'View less' : 'View more';
     });
 });
+
+
+// Footer: size the big name so it exactly fills the footer card width
+function fitFooterWord() {
+    const word = document.querySelector('.footer-word');
+    if (!word) return;
+    word.style.fontSize = '100px';
+    word.style.width = 'max-content';
+    const needed = word.getBoundingClientRect().width;
+    word.style.width = '';
+    const available = word.clientWidth;
+    if (needed > 0 && available > 0) word.style.fontSize = Math.floor(100 * available / needed * 0.98) + 'px';
+}
+fitFooterWord();
+window.addEventListener('resize', fitFooterWord);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFooterWord);
