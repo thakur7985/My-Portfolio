@@ -2549,7 +2549,7 @@ html {
 .footer-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 18px;
@@ -2564,18 +2564,6 @@ html {
 }
 
 .footer-bar strong {
-    color: var(--text);
-}
-
-.to-top {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.to-top:hover {
     color: var(--text);
 }
 

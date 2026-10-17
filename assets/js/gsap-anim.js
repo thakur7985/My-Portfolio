@@ -303,7 +303,7 @@
 
     // ---- Magnetic buttons (mouse only) ----
     if (window.matchMedia('(pointer: fine)').matches) {
-        gsap.utils.toArray('.header-btn, .gts, .social-link, .about-cta, .contact-submit, .footer-icon, .to-top').forEach(function (btn) {
+        gsap.utils.toArray('.header-btn, .gts, .social-link, .about-cta, .contact-submit, .footer-icon').forEach(function (btn) {
             btn.addEventListener('mousemove', function (e) {
                 var r = btn.getBoundingClientRect();
                 gsap.to(btn, {
