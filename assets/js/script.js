@@ -1,26 +1,10 @@
 
 
-function erase() {
-    if (charIndex > 0) {
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 500);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
-});
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   
   const navbar = document.querySelector(".navbar");
+  if (!toggle || !navbar) return;
 
   toggle.addEventListener("click", function () {
       // Toggle the 'on' class for the button
@@ -35,12 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-(function() {
+if (window.emailjs) {
     emailjs.init("X4WNWymq0WAwa9wvX"); // Replace with your Public Key
-})();
+}
 
 // Form Submit Handler
-document.getElementById("contact-form").addEventListener("submit", function(event) {
+const contactForm = document.getElementById("contact-form");
+if (contactForm) contactForm.addEventListener("submit", function(event) {
     event.preventDefault(); 
 
     const serviceID = "service_rqed2jj";  // Replace with your Service ID
@@ -72,6 +57,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
 // Particles 
 
 document.addEventListener('DOMContentLoaded', function() {
+            if (!window.particlesJS || !document.getElementById('particles-js')) return;
             particlesJS('particles-js', {
                 "particles": {
                     "number": {
@@ -82,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     },
                     "color": {
-                        "value": "#ffffff"
+                        "value": "#4fd89b"
                     },
                     "shape": {
                         "type": "circle",
@@ -117,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     "line_linked": {
                         "enable": true,
                         "distance": 150,
-                        "color": "#3a7bd5",
+                        "color": "#5b7fb8",
                         "opacity": 0.4,
                         "width": 1
                     },
@@ -213,33 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        document.querySelector('.about-container').classList.add('fade-in');
-
-document.addEventListener('DOMContentLoaded', function() {
-            const serviceCards = document.querySelectorAll('.service-card');
-            
-            function checkVisibility() {
-                serviceCards.forEach(card => {
-                    const cardTop = card.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (cardTop < windowHeight - 100) {
-                        const delay = parseInt(card.getAttribute('data-delay'));
-                        setTimeout(() => {
-                            card.classList.add('visible');
-                        }, delay);
-                    }
-                });
-            }
-            
-            // Initial check
-            checkVisibility();
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkVisibility);
-        });
-
-
+const aboutContainer = document.querySelector('.about-container');
+if (aboutContainer) aboutContainer.classList.add('fade-in');
 
 // Services
 document.addEventListener('DOMContentLoaded', function() {
@@ -269,3 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+// Projects: "View more" toggles the project details
+document.querySelectorAll('.work-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        const item = btn.closest('.work-item');
+        const open = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+        btn.querySelector('.work-more-label').textContent = open ? 'View less' : 'View more';
+    });
+});

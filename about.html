@@ -54,7 +54,7 @@
                             <li><a href="index.html" style="--i:1;"><span>Home</span></a></li>
                             <li><a href="about.html" style="--i:2;">About</a></li>
                             <li><a href="skills.html" style="--i:3;">Services</a></li>
-                            <li><a href="projects.html" style="--i:5;">Projects</a></li>
+                            <li><a href="portfolio.html" style="--i:5;">Projects</a></li>
                             <li><a href="contact.html" style="--i:6;">Contact</a></li>
                         </ul>
                     </div>
@@ -80,144 +80,180 @@
         </section>
 
         <!-- About -->
-        <section id="about">
+        <section id="about" class="about-v2">
+            <div class="about-bg-word" aria-hidden="true">About&nbsp;me&nbsp;&middot;&nbsp;About&nbsp;me</div>
             <div class="site-width">
-                <div class="about-container fade-in">
-                <div class="about-img">
-                    <img src="assets/Image/laptop-notebook-timber-table.jpg" alt="Developer Profile">
-                    <div class="img-overlay">
-                        <div class="text-lg font-semibold">Full Stack Developer</div>
-                        <div class="text-sm">Python | MySQL | Web Technologies</div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <span class="section-subtitle delay-1">About Me</span>
-                    <h2 class="delay-2">A Passionate Developer Who Loves to Code</h2>
-                    <p class="delay-3">I'm Abhishek Thakur, a passionate Python Full Stack Developer with a creative edge. 
-                    With hands-on experience in both backend and frontend development, I also specialize in web design, content creation, video editing, and photography. 
-                    My goal is to use technology and creativity to build impactful digital experiences — and one day, to launch my own startup that provides innovative tech solutions.</p>
-                    
-                            <div class="photo-signature-container">
-                                <img src="assets/Image/abhi.jpg" alt="Abhishek Thakur" class="passport-photo">
-                                <div class="signature-container">
-                                    <div class="signature">Abhishek Thakur</div>
-                                </div>
+                <div class="about-grid">
+                    <div class="about-body">
+                        <p class="about-label"><span class="hero-dot"></span>About me</p>
+                        <h2 class="about-heading" data-split="words">Engineer by trade, <span class="accent">creator</span> by habit.</h2>
+                        <p class="about-para">I'm Abhishek Thakur, a Software Engineer at Cognitensor and a Python full-stack developer. Most of my work lives in the backend: designing clean APIs, shaping data models and keeping systems reliable as they grow. I'm just as comfortable on the frontend, and outside of code I spend my time on web design, content, video editing and photography. That mix lets me build products that are solid under the hood and genuinely good to use. Next on the list: launching my own startup that brings engineering and creativity together.</p>
+
+                        <ul class="about-facts">
+                            <li><span>Role</span><strong>Software Engineer, Cognitensor</strong></li>
+                            <li><span>Focus</span><strong>Python backends &amp; APIs</strong></li>
+                            <li><span>Beyond code</span><strong>Design, video &amp; photography</strong></li>
+                            <li><span>Next</span><strong>Building my own startup</strong></li>
+                        </ul>
+
+                        <div class="about-actions">
+                            <a href="assets/ABHISHEK_THAKUR_CV.pdf" class="about-cta" download>Download CV <i class="fas fa-arrow-down"></i></a>
+                            <div class="social-links">
+                                <a href="https://github.com/thakur7985" class="social-link" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/abhishekthakur7985" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                       
-                    <div class="social-links">
-                        <a href="https://github.com/thakur7985" class="social-link delay-1" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/abhishekthakur7985" class="social-link delay-2" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        
+                        </div>
                     </div>
                 </div>
             </div>
-                </div>
         </section>
 
 
 
-    <section id="technologies">
+    <section id="technologies" class="tools">
         <div class="site-width">
-            <div class="services-header">
-            <span>What I Use</span>
-            <h2>We Offer Comprehensive Digital Solutions</h2>
-        </div>
-            <div class="owl-carousel tech-carousel">
-                <div class="tech-item">
-                <img src="assets/Image/html-5.svg" alt="HTML" />
-                <p>HTML</p>
+            <div class="sec-head">
+                <p class="sec-label"><span class="hero-dot"></span>What I use</p>
+                <h2 class="sec-heading">Tools I build <span class="accent">with.</span></h2>
+            </div>
+            <div class="logo-carousel">
+                <div class="logo-row" data-direction="left">
+                    <div class="logo-track">
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/python.svg" alt="" loading="lazy"><span>Python</span></div>
+                        <div class="logo-item"><img class="logo-img logo-mono" src="assets/Image/logos/django.svg" alt="" loading="lazy"><span>Django</span></div>
+                        <div class="logo-item"><img class="logo-img logo-mono" src="assets/Image/logos/drf.svg" alt="" loading="lazy"><span>DRF</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/fastapi.svg" alt="" loading="lazy"><span>FastAPI</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/postgresql.svg" alt="" loading="lazy"><span>PostgreSQL</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/mysql.svg" alt="" loading="lazy"><span>MySQL</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/react.svg" alt="" loading="lazy"><span>React</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/html5.svg" alt="" loading="lazy"><span>HTML5</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/css3.svg" alt="" loading="lazy"><span>CSS3</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/python.svg" alt="" loading="lazy"><span>Python</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/django.svg" alt="" loading="lazy"><span>Django</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/drf.svg" alt="" loading="lazy"><span>DRF</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/fastapi.svg" alt="" loading="lazy"><span>FastAPI</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/postgresql.svg" alt="" loading="lazy"><span>PostgreSQL</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/mysql.svg" alt="" loading="lazy"><span>MySQL</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/react.svg" alt="" loading="lazy"><span>React</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/html5.svg" alt="" loading="lazy"><span>HTML5</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/css3.svg" alt="" loading="lazy"><span>CSS3</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/python.svg" alt="" loading="lazy"><span>Python</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/django.svg" alt="" loading="lazy"><span>Django</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/drf.svg" alt="" loading="lazy"><span>DRF</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/fastapi.svg" alt="" loading="lazy"><span>FastAPI</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/postgresql.svg" alt="" loading="lazy"><span>PostgreSQL</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/mysql.svg" alt="" loading="lazy"><span>MySQL</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/react.svg" alt="" loading="lazy"><span>React</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/html5.svg" alt="" loading="lazy"><span>HTML5</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/css3.svg" alt="" loading="lazy"><span>CSS3</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/python.svg" alt="" loading="lazy"><span>Python</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/django.svg" alt="" loading="lazy"><span>Django</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/drf.svg" alt="" loading="lazy"><span>DRF</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/fastapi.svg" alt="" loading="lazy"><span>FastAPI</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/postgresql.svg" alt="" loading="lazy"><span>PostgreSQL</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/mysql.svg" alt="" loading="lazy"><span>MySQL</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/react.svg" alt="" loading="lazy"><span>React</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/html5.svg" alt="" loading="lazy"><span>HTML5</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/css3.svg" alt="" loading="lazy"><span>CSS3</span></div>
+                    </div>
                 </div>
-                <div class="tech-item">
-                <img src="assets/Image/css-3.svg" alt="CSS" />
-                <p>CSS</p>
-                </div>
-                <div class="tech-item">
-                <img src="assets/Image/reactjs.svg" alt="JavaScript" />
-                <p>React-JS</p>
-                </div>
-                <div class="tech-item">
-                <img src="assets/Image/python.svg" alt="Python" />
-                <p>Python</p>
-                </div>
-                <div class="tech-item">
-                <img src="assets/Image/mysql.svg" alt="MySQL" />
-                <p>MySQL</p>
-                </div>
-                <div class="tech-item">
-                <img src="assets/Image/ai.svg" alt="Graphic Design" />
-                <p>AI</p>
-                </div>
-                <div class="tech-item">
-                <img src="assets/Image/photoshop.svg" alt="AI" />
-                <p>Adobe Photoshop</p>
-                </div>
-                <div class="tech-item">
-                <img src="assets/Image/graphic-design-monitor.svg" alt="AI" />
-                <p>Graphic Design</p>
+                <div class="logo-row" data-direction="right">
+                    <div class="logo-track">
+                        <div class="logo-item"><img class="logo-img logo-mono" src="assets/Image/logos/aws.svg" alt="" loading="lazy"><span>AWS S3</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/docker.svg" alt="" loading="lazy"><span>Docker</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/cicd.svg" alt="" loading="lazy"><span>CI/CD</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/git.svg" alt="" loading="lazy"><span>Git</span></div>
+                        <div class="logo-item"><img class="logo-img logo-mono" src="assets/Image/logos/github.svg" alt="" loading="lazy"><span>GitHub</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/vscode.svg" alt="" loading="lazy"><span>VS Code</span></div>
+                        <div class="logo-item"><img class="logo-img" src="assets/Image/logos/twilio.svg" alt="" loading="lazy"><span>Twilio</span></div>
+                        <div class="logo-item"><img class="logo-img logo-mono" src="assets/Image/logos/razorpay.svg" alt="" loading="lazy"><span>Razorpay</span></div>
+                        <div class="logo-item"><img class="logo-img logo-mono" src="assets/Image/logos/rasa.svg" alt="" loading="lazy"><span>Rasa NLU</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/aws.svg" alt="" loading="lazy"><span>AWS S3</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/docker.svg" alt="" loading="lazy"><span>Docker</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/cicd.svg" alt="" loading="lazy"><span>CI/CD</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/git.svg" alt="" loading="lazy"><span>Git</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/github.svg" alt="" loading="lazy"><span>GitHub</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/vscode.svg" alt="" loading="lazy"><span>VS Code</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/twilio.svg" alt="" loading="lazy"><span>Twilio</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/razorpay.svg" alt="" loading="lazy"><span>Razorpay</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/rasa.svg" alt="" loading="lazy"><span>Rasa NLU</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/aws.svg" alt="" loading="lazy"><span>AWS S3</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/docker.svg" alt="" loading="lazy"><span>Docker</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/cicd.svg" alt="" loading="lazy"><span>CI/CD</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/git.svg" alt="" loading="lazy"><span>Git</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/github.svg" alt="" loading="lazy"><span>GitHub</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/vscode.svg" alt="" loading="lazy"><span>VS Code</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/twilio.svg" alt="" loading="lazy"><span>Twilio</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/razorpay.svg" alt="" loading="lazy"><span>Razorpay</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/rasa.svg" alt="" loading="lazy"><span>Rasa NLU</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/aws.svg" alt="" loading="lazy"><span>AWS S3</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/docker.svg" alt="" loading="lazy"><span>Docker</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/cicd.svg" alt="" loading="lazy"><span>CI/CD</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/git.svg" alt="" loading="lazy"><span>Git</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/github.svg" alt="" loading="lazy"><span>GitHub</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/vscode.svg" alt="" loading="lazy"><span>VS Code</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img" src="assets/Image/logos/twilio.svg" alt="" loading="lazy"><span>Twilio</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/razorpay.svg" alt="" loading="lazy"><span>Razorpay</span></div>
+                        <div class="logo-item" aria-hidden="true"><img class="logo-img logo-mono" src="assets/Image/logos/rasa.svg" alt="" loading="lazy"><span>Rasa NLU</span></div>
+                    </div>
                 </div>
             </div>
         </div>
-</section>
+    </section>
 
 
 
                 <!-- Footer Section -->
-                    <footer class="footer">
-                        
-                        <div class="site-width footer-container">
-
-                            <!-- Useful Links -->
-                            <div class="footer-box">
-                                <h3>Links</h3>
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="skills.html">Services</a></li>
-                                    <li><a href="projects.html">Projects</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-
-                <!-- Services -->
-                <div class="footer-box">
-                    <h3>Services</h3>
-                    <ul>
-                        <li>Web Design</li>
-                        <li>Full Stack Development</li>
-                        <li>Python Development</li>
-                        <li>UI/UX Design</li>
-                        <li>Video Editing</li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-box">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-phone"></i> +91-7985142638</li>
-                        <li><i class="fa-solid fa-envelope"></i> at782951@gmail.com</li>
-                        <li><i class="fa-solid fa-location-dot"></i> Noida, Sector 55, 201301</li>
-                    </ul>
-                </div>
-
-                <!-- Social Icons -->
-                <div class="footer-box">
-                    <h3>Follow Me</h3>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/share/1JDAPRzZrg/" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/AbhishekThaku07" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/abhishekthakur_07" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@abhishekverse_07?si=BhHncEea7AGuLr84" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-                        <!-- <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a> -->
-                        <a href="https://teams.live.com/l/invite/FEAV_rNQaoBrGoUKQE" class="social-icon skype"><i class="fab fa-skype"></i></a>
+                    <footer class="footer footer-v2">
+            <div class="site-width">
+                <div class="footer-top">
+                    <div class="footer-cta">
+                        <p class="sec-label"><span class="hero-dot"></span>Got an idea?</p>
+                        <a href="mailto:at782951@gmail.com" class="footer-mail">at782951@gmail.com <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="footer-cols">
+                        <div class="footer-col">
+                            <h3>Pages</h3>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="skills.html">Services</a></li>
+                                <li><a href="portfolio.html">Projects</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Services</h3>
+                            <ul>
+                                <li>Web Design</li>
+                                <li>Full Stack Development</li>
+                                <li>Python Development</li>
+                                <li>UI/UX Design</li>
+                                <li>Video Editing</li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Social</h3>
+                            <ul>
+                                <li><a href="https://github.com/thakur7985" target="_blank" rel="noopener">GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/abhishekthakur7985" target="_blank" rel="noopener">LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/abhishekthakur_07" target="_blank" rel="noopener">Instagram</a></li>
+                                <li><a href="https://youtube.com/@abhishekverse_07?si=BhHncEea7AGuLr84" target="_blank" rel="noopener">YouTube</a></li>
+                                <li><a href="https://x.com/AbhishekThaku07" target="_blank" rel="noopener">X / Twitter</a></li>
+                                <li><a href="https://www.facebook.com/share/1JDAPRzZrg/" target="_blank" rel="noopener">Facebook</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <div class="footer-word" aria-hidden="true">Abhishek Thakur</div>
+
+                <div class="footer-bar">
+                    <p>Developed with love by <strong>Abhishek Thakur</strong> &copy; 2025</p>
+                    <a href="#" class="to-top">Back to top <i class="fas fa-arrow-up"></i></a>
+                </div>
             </div>
+
             <!-- whatsapp section -->
         <a href="https://wa.me/7985142638" id="whatsapp" class="text-theme-colored font-36 mt-5 sm-display-block"  rel="nofollow" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -225,10 +261,6 @@
               </svg>
               
         </a>
-
-            <div class="footer-bottom">
-                <p>Developed with love by <strong>Abhishek Thakur</strong> © 2025</p>
-            </div>
         </footer>
     </div>
     <!-- link to js -->
@@ -294,6 +326,10 @@
   });
 </script>
     
+<!-- GSAP animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/gsap-anim.js"></script>
 </body>
 
 </html>

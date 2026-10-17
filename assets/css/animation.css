@@ -13,9 +13,9 @@ right: 0;
 bottom: 0;
 z-index: 999999;
 
-  background: #D3CCE3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0a161c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0a161c, #0f2a2a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0a161c, #0f2a2a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .spinner {
@@ -30,10 +30,10 @@ z-index: 999999;
   height: 100%;
   width: 100%;
   display: flex;
-  background: #fff;
-  background: #D3CCE3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  background: #0a161c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0a161c, #0f2a2a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0a161c, #0f2a2a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .hello-word {
@@ -328,7 +328,7 @@ z-index: 999999;
 }
 
 .hello-parent h1{
-  color: #000;
+  color: #f5f7f8;
   position: absolute;
   top: 50%;
   left: 50%;
