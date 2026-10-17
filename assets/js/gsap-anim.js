@@ -57,6 +57,7 @@
     var preloader = document.querySelector('.preloader');
     var preloaderActive = preloader && root.classList.contains('pl-on');
     var heroTl = null;
+    var logoTl = null;
 
     if (preloaderActive) {
         var count = { value: 0 };
@@ -68,6 +69,7 @@
                 try { sessionStorage.setItem('preloaderSeen', '1'); } catch (e) {}
                 ScrollTrigger.refresh();
                 if (heroTl) heroTl.play();
+                if (logoTl) logoTl.play();
             }
         });
 
@@ -83,6 +85,25 @@
             }, 0)
             .to('.preloader-inner, .pl-bottom', { yPercent: -40, autoAlpha: 0, duration: 0.5, ease: 'power3.in' }, 2.4)
             .to(preloader, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.8, ease: 'power4.inOut' }, 2.65);
+    }
+
+    // ---- Logo: box pops in, the T and A strokes draw themselves, nodes pop ----
+    var brandMark = document.querySelector('.brand-mark');
+    if (brandMark) {
+        var strokes = brandMark.querySelectorAll('.bm-line');
+        strokes.forEach(function (path) {
+            var len = path.getTotalLength();
+            gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+        });
+        logoTl = gsap.timeline({ paused: preloaderActive, delay: preloaderActive ? 0 : 0.2 })
+            .from(brandMark.querySelector('.bm-box'), {
+                scale: 0.4, rotate: -90, autoAlpha: 0, transformOrigin: '50% 50%', duration: 0.8, ease: 'back.out(1.7)'
+            })
+            .to(strokes, { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut', stagger: 0.25 }, 0.35)
+            .from(brandMark.querySelectorAll('.bm-node'), {
+                scale: 0, transformOrigin: '50% 50%', duration: 0.5, ease: 'back.out(3)', stagger: 0.1
+            }, 1)
+            .from('.brand-text > *', { x: -14, autoAlpha: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1 }, 0.5);
     }
 
     // ---- Hero ----

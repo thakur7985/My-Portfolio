@@ -257,3 +257,19 @@ function fitFooterWord() {
 fitFooterWord();
 window.addEventListener('resize', fitFooterWord);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFooterWord);
+
+
+// Logo: make "TechAbhi" exactly as wide as the "From concepts to code" tagline
+function fitBrandName() {
+    const name = document.querySelector('.brand-name');
+    const tag = document.querySelector('.brand-tag');
+    if (!name || !tag) return;
+    name.style.fontSize = '';
+    const base = parseFloat(getComputedStyle(name).fontSize);
+    const nameWidth = name.getBoundingClientRect().width;
+    const tagWidth = tag.getBoundingClientRect().width;
+    if (nameWidth > 0 && tagWidth > 0) name.style.fontSize = (base * tagWidth / nameWidth) + 'px';
+}
+fitBrandName();
+window.addEventListener('resize', fitBrandName);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBrandName);

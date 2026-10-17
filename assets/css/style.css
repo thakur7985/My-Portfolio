@@ -2792,3 +2792,106 @@ html.pl-on .preloader {
         font-size: 15px;
     }
 }
+
+/* ================= TechAbhi wordmark logo ================= */
+.logo {
+    width: auto;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    overflow: visible;
+    filter: drop-shadow(0 6px 18px rgba(79, 216, 155, 0.18));
+    transition: transform 0.6s cubic-bezier(.2, .8, .2, 1), filter 0.4s ease;
+}
+
+.bm-line {
+    fill: none;
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.bm-core {
+    filter: drop-shadow(0 0 4px rgba(245, 247, 248, 0.8));
+}
+
+.brand:hover .brand-mark {
+    transform: rotate(-8deg) scale(1.06);
+    filter: drop-shadow(0 8px 24px rgba(79, 216, 155, 0.4));
+}
+
+.brand-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+/* name is sized by script.js to the exact width of the tagline */
+.brand-name {
+    white-space: nowrap;
+}
+
+.brand-name {
+    display: inline-flex;
+    align-items: flex-end;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+.brand-accent {
+    color: var(--accent);
+}
+
+.brand-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-left: 1px;
+    /* cancel the trailing letter-spacing so the measured width is the visible text */
+    margin-right: -0.24em;
+}
+
+.brand:hover .bm-core {
+    animation: blink 1s ease infinite;
+}
+
+@media screen and (max-width: 768px) {
+    .brand {
+        gap: 9px;
+    }
+    .brand-mark {
+        width: 36px;
+        height: 36px;
+    }
+    .brand-name {
+        font-size: 24px;
+    }
+    .brand-tag {
+        font-size: 8px;
+        letter-spacing: 0.2em;
+        margin-right: -0.2em;
+    }
+}
+
+/* the nav-link hover underline shouldn't apply to the logo */
+nav a.brand::after {
+    display: none;
+}
