@@ -6,15 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   if (!toggle || !navbar) return;
 
-  toggle.addEventListener("click", function () {
-      // Toggle the 'on' class for the button
-      this.classList.toggle("on");
+  function setMenu(open) {
+      toggle.classList.toggle("on", open);
+      navbar.style.display = open ? "block" : "none";
+      // stop the page behind the full-screen menu from scrolling
+      document.documentElement.classList.toggle("menu-open", open);
+  }
 
-      // Slide toggle the navbar
-      if (navbar.style.display === "block") {
-          navbar.style.display = "none";
-      } else {
-          navbar.style.display = "block";
+  toggle.addEventListener("click", function () {
+      setMenu(navbar.style.display !== "block");
+  });
+
+  navbar.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setMenu(false); });
+  });
+
+  // back on a wide screen the menu is always visible, so drop the mobile state
+  window.addEventListener("resize", function () {
+      if (window.innerWidth > 768 && toggle.classList.contains("on")) {
+          setMenu(false);
+          navbar.style.display = "";
       }
   });
 });
@@ -85,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "random": true,
                         "anim": {
                             "enable": true,
-                            "speed": 3,
+                            "speed": 1,
                             "opacity_min": 0.1,
                             "sync": false
                         }
@@ -95,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "random": true,
                         "anim": {
                             "enable": true,
-                            "speed": 3,
+                            "speed": 1,
                             "size_min": 0.1,
                             "sync": false
                         }
@@ -109,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     "move": {
                         "enable": true,
-                        "speed": 3,
+                        "speed": 1,
                         "direction": "none",
                         "random": true,
                         "straight": false,
