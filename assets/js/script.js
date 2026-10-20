@@ -253,6 +253,14 @@ document.querySelectorAll('.work-toggle').forEach(function (btn) {
     });
 });
 
+// The whole project row opens it too (except the "Live" link, which opens the site)
+document.querySelectorAll('.work-row').forEach(function (row) {
+    row.addEventListener('click', function (e) {
+        if (e.target.closest('a, button')) return;
+        row.querySelector('.work-toggle').click();
+    });
+});
+
 
 // Footer: size the big name so it exactly fills the footer card width
 function fitFooterWord() {

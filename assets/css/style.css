@@ -1765,8 +1765,60 @@ nav a:hover::after {
     position: relative;
     z-index: 1;
     display: grid;
-    max-width: 1000px;
+    grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+    gap: clamp(40px, 6vw, 96px);
+    align-items: center;
 }
+
+/* Profile photo */
+.about-visual {
+    position: relative;
+}
+
+.about-photo {
+    position: relative;
+    aspect-ratio: 516 / 599;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    background: #d9dcdf;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 8px rgba(79, 216, 155, 0.05);
+}
+
+/* taller than the frame so the scroll parallax never shows an edge */
+.about-photo img {
+    position: absolute;
+    top: -6%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 112%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+/* soft dark fade at the bottom so the light photo sits in the dark theme */
+.about-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(10, 22, 28, 0.55) 100%);
+    pointer-events: none;
+}
+
+
+
+@media screen and (max-width: 998px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-visual {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+}
+
 
 /* Body */
 .about-label {
@@ -1953,18 +2005,31 @@ nav a:hover::after {
     transform-origin: left;
 }
 
-.work-toggle {
+.work-row {
     display: grid;
     grid-template-columns: 70px minmax(0, 1fr) 240px 150px;
     align-items: center;
     gap: 24px;
-    width: 100%;
     padding: 36px 0;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* "View more" control at the end of each row */
+.work-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    justify-self: end;
+    padding: 0;
     background: none;
     border: 0;
     font: inherit;
-    text-align: left;
-    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
     cursor: pointer;
 }
 
@@ -2011,6 +2076,20 @@ nav a:hover::after {
     margin: 0 0 22px;
 }
 
+.work-line {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 620px;
+}
+
+.work-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
 .work-tags {
     font-size: 14px;
     line-height: 1.7;
@@ -2018,15 +2097,30 @@ nav a:hover::after {
     text-align: right;
 }
 
-.work-more {
+/* small "Live" link next to the tech tags */
+.work-live {
     display: inline-flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 14px;
-    font-size: 14px;
+    gap: 7px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
     font-weight: 600;
+    letter-spacing: 0.04em;
     color: var(--accent);
-    white-space: nowrap;
+    background: rgba(79, 216, 155, 0.1);
+    border: 1px solid var(--border-strong);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.work-live i {
+    font-size: 10px;
+}
+
+.work-live:hover {
+    color: var(--bg-dark);
+    background: var(--accent);
 }
 
 .work-plus {
@@ -2057,19 +2151,19 @@ nav a:hover::after {
     transform: rotate(90deg);
 }
 
-.work-toggle:hover .work-title,
+.work-row:hover .work-title,
 .work-item.open .work-title {
     color: var(--accent);
     transform: translateX(16px);
 }
 
-.work-toggle:hover .work-plus,
+.work-row:hover .work-plus,
 .work-item.open .work-plus {
     background: var(--accent);
 }
 
-.work-toggle:hover .work-plus::before,
-.work-toggle:hover .work-plus::after,
+.work-row:hover .work-plus::before,
+.work-row:hover .work-plus::after,
 .work-item.open .work-plus::before,
 .work-item.open .work-plus::after {
     background: var(--bg-dark);
@@ -2139,12 +2233,18 @@ nav a:hover::after {
 }
 
 @media screen and (max-width: 1100px) {
-    .work-toggle {
+    .work-row {
         grid-template-columns: 50px minmax(0, 1fr) 150px;
     }
-    .work-tags {
+    .work-meta {
         grid-column: 2 / 3;
         grid-row: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 14px;
+    }
+    .work-tags {
         text-align: left;
         color: var(--accent);
     }
@@ -2159,11 +2259,14 @@ nav a:hover::after {
 }
 
 @media screen and (max-width: 768px) {
-    .work-toggle {
+    .work-row {
         grid-template-columns: 34px minmax(0, 1fr) 44px;
         row-gap: 14px;
         gap: 14px;
         padding: 28px 0;
+    }
+    .work-line {
+        font-size: 14px;
     }
     .work-more-label {
         display: none;
@@ -2826,9 +2929,14 @@ nav a.brand::after {
 }
 
 @media screen and (max-width: 768px) {
-    html.menu-open,
-    html.menu-open body {
+    /* lock page scroll on <html> only: if <body> also clips, the sticky
+       header stops being sticky and scrolls out of view with the logo/close button */
+    html.menu-open {
         overflow: hidden;
+    }
+
+    html.menu-open body {
+        overflow: visible;
     }
 
     nav {
@@ -2970,4 +3078,65 @@ nav a.brand::after {
 .navbar a.active::after {
     width: 100%;
     background-color: var(--accent);
+}
+
+/* "See website" link inside a project's details */
+.work-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 26px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    border: 1px solid var(--border-strong);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.work-link i {
+    font-size: 13px;
+}
+
+.work-link:hover {
+    color: var(--bg-dark);
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Project rows on phones: keep title in line with its label, number aligned to the top */
+@media screen and (max-width: 768px) {
+    .work-row {
+        align-items: start;
+    }
+    .work-num {
+        padding-top: 2px;
+    }
+    .work-toggle {
+        align-self: center;
+        grid-row: 1;
+        grid-column: 3;
+    }
+    .work-row:hover .work-title,
+    .work-item.open .work-title {
+        transform: none;
+    }
+}
+
+/* Inner-page hero (About Me / Services / Projects / Contact): title centred vertically too */
+#home:not(:has(.hero)) {
+    padding: 56px 0;
+}
+
+#home:not(:has(.hero)) .home-text h1 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+@media screen and (max-width: 768px) {
+    #home:not(:has(.hero)) {
+        padding: 44px 0;
+    }
 }

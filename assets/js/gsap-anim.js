@@ -171,6 +171,21 @@
             scrollTrigger: { trigger: about, start: 'top bottom', end: 'bottom top', scrub: true }
         });
 
+        // Photo opens like a curtain while the image eases out of a zoom
+        if (document.querySelector('.about-photo')) {
+            gsap.timeline({ scrollTrigger: { trigger: '.about-visual', start: 'top 80%' } })
+                .fromTo('.about-photo',
+                    { clipPath: 'inset(100% 0% 0% 0% round 24px)' },
+                    { clipPath: 'inset(0% 0% 0% 0% round 24px)', duration: 1.2, ease: 'power4.inOut' })
+                .from('.about-photo img', { scale: 1.35, duration: 1.6, ease: 'power3.out' }, 0);
+
+            // gentle parallax while scrolling past
+            gsap.fromTo('.about-photo img', { yPercent: -4 }, {
+                yPercent: 4, ease: 'none',
+                scrollTrigger: { trigger: '.about-visual', start: 'top bottom', end: 'bottom top', scrub: true }
+            });
+        }
+
         gsap.from('.about-label', {
             y: 20, autoAlpha: 0, duration: 0.7, ease: 'power3.out',
             scrollTrigger: { trigger: '.about-body', start: 'top 80%' }
@@ -206,7 +221,7 @@
     gsap.utils.toArray('.work-item').forEach(function (item) {
         gsap.timeline({ scrollTrigger: { trigger: item, start: 'top 90%' } })
             .fromTo(item, { '--line': 0 }, { '--line': 1, duration: 1, ease: 'power3.inOut' })
-            .from(item.querySelectorAll('.work-num, .work-main, .work-tags, .work-more'), {
+            .from(item.querySelectorAll('.work-num, .work-main, .work-meta, .work-toggle'), {
                 y: 30, autoAlpha: 0, duration: 0.7, ease: 'power3.out', stagger: 0.06
             }, 0.25);
     });
@@ -218,7 +233,7 @@
             // Content below moves when a panel opens/closes, so re-measure triggers
             setTimeout(function () { ScrollTrigger.refresh(); }, 650);
             if (!item.classList.contains('open')) return;
-            gsap.fromTo(item.querySelectorAll('.work-thumb, .work-intro, .work-points li'),
+            gsap.fromTo(item.querySelectorAll('.work-thumb, .work-intro, .work-points li, .work-link'),
                 { y: 20, autoAlpha: 0 },
                 { y: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out', stagger: 0.07, delay: 0.15 });
         });

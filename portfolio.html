@@ -107,16 +107,19 @@
                 <h2 class="sec-heading">Projects I've <span class="accent">built.</span></h2>
             </div>
             <ul class="work-list">
-                <li class="work-item">
-                    <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-1">
+                <li class="work-item open">
+                    <div class="work-row">
                         <span class="work-num">01</span>
                         <span class="work-main">
                             <span class="work-sub">Multi-tenant SaaS</span>
                             <span class="work-title">AI Construction ERP &amp; CRM</span>
+                            <span class="work-line">Multi-tenant ERP/CRM for construction and electrical contractors.</span>
                         </span>
-                        <span class="work-tags">Django &middot; DRF &middot; PostgreSQL &middot; React &middot; Docker</span>
-                        <span class="work-more"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></span>
-                    </button>
+                        <span class="work-meta">
+                            <span class="work-tags">Django &middot; DRF &middot; PostgreSQL &middot; React &middot; Docker</span>
+                        </span>
+                        <button type="button" class="work-toggle" aria-expanded="true" aria-controls="work-details-1"><span class="work-more-label">View less</span><span class="work-plus" aria-hidden="true"></span></button>
+                    </div>
                     <div class="work-details" id="work-details-1">
                         <div class="work-details-inner">
                             <img class="work-thumb" src="assets/Image/building.jpg" alt="AI Construction ERP &amp; CRM" loading="lazy">
@@ -133,15 +136,18 @@
                     </div>
                 </li>
                 <li class="work-item">
-                    <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-2">
+                    <div class="work-row">
                         <span class="work-num">02</span>
                         <span class="work-main">
                             <span class="work-sub">AI chatbot</span>
                             <span class="work-title">WhatsApp Ticket Booking Chatbot</span>
+                            <span class="work-line">Books bus, flight and hotel tickets end to end, right inside WhatsApp.</span>
                         </span>
-                        <span class="work-tags">FastAPI &middot; Twilio &middot; Rasa NLU &middot; Razorpay &middot; MySQL</span>
-                        <span class="work-more"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></span>
-                    </button>
+                        <span class="work-meta">
+                            <span class="work-tags">FastAPI &middot; Twilio &middot; Rasa NLU &middot; Razorpay &middot; MySQL</span>
+                        </span>
+                        <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-2"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></button>
+                    </div>
                     <div class="work-details" id="work-details-2">
                         <div class="work-details-inner">
                             <img class="work-thumb" src="assets/Image/whatsapp.webp" alt="WhatsApp Ticket Booking Chatbot" loading="lazy">
@@ -157,15 +163,18 @@
                     </div>
                 </li>
                 <li class="work-item">
-                    <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-3">
+                    <div class="work-row">
                         <span class="work-num">03</span>
                         <span class="work-main">
                             <span class="work-sub">Computer vision</span>
                             <span class="work-title">Face Detection AI-Cam</span>
+                            <span class="work-line">Camera-based attendance with face recognition, plus ANPR for smart parking.</span>
                         </span>
-                        <span class="work-tags">FastAPI &middot; OpenCV &middot; Face Recognition &middot; MySQL</span>
-                        <span class="work-more"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></span>
-                    </button>
+                        <span class="work-meta">
+                            <span class="work-tags">FastAPI &middot; OpenCV &middot; Face Recognition &middot; MySQL</span>
+                        </span>
+                        <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-3"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></button>
+                    </div>
                     <div class="work-details" id="work-details-3">
                         <div class="work-details-inner">
                             <img class="work-thumb" src="assets/Image/ai.jpeg" alt="Face Detection AI-Cam" loading="lazy">
@@ -180,16 +189,50 @@
                     </div>
                 </li>
                 <li class="work-item">
-                    <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-4">
+                    <div class="work-row">
                         <span class="work-num">04</span>
+                        <span class="work-main">
+                            <span class="work-sub">Cafe website</span>
+                            <span class="work-title">Sangrill Cafe Website</span>
+                            <span class="work-line">Multi-page cafe website with a full menu, gallery and WhatsApp bookings.</span>
+                        </span>
+                        <span class="work-meta">
+                            <span class="work-tags">HTML &middot; CSS &middot; JavaScript &middot; jQuery</span>
+                            <a href="https://thakur7985.github.io/Sangrill/" class="work-live" target="_blank" rel="noopener">See website <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </span>
+                        <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-4"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></button>
+                    </div>
+                    <div class="work-details" id="work-details-4">
+                        <div class="work-details-inner">
+                            <img class="work-thumb" src="assets/Image/sangrill.jpg" alt="Sangrill Cafe Website" loading="lazy">
+                            <div class="work-text">
+                                <p class="work-intro">A multi-page website for Sangrill, an all-vegetarian cafe in Ballia, with a full menu, a photo gallery, and table and birthday bookings that go straight to the cafe on WhatsApp.</p>
+                                <ul class="work-points">
+                                    <li>Built a multi-page site (Home, Menu, Gallery, Book a Table, Contact and Birthday Booking) with a responsive layout and a mobile drawer menu.</li>
+                                    <li>Booking and order forms build a pre-filled WhatsApp message, so table, birthday and food orders reach the cafe instantly.</li>
+                                    <li>Menu page with category tabs, scroll-spy and smooth jumps between sections like shakes, sandwiches, pizza and momos.</li>
+                                    <li>Interactive touches: an auto-playing hero carousel, gallery lightbox, scroll-reveal animations and 3D tilt on food cards.</li>
+                                </ul>
+                                <a href="https://thakur7985.github.io/Sangrill/" class="work-link" target="_blank" rel="noopener">See website <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="work-item">
+                    <div class="work-row">
+                        <span class="work-num">05</span>
                         <span class="work-main">
                             <span class="work-sub">Web application</span>
                             <span class="work-title">College Management System</span>
+                            <span class="work-line">Manages students, courses and testimonials for a college.</span>
                         </span>
-                        <span class="work-tags">Django &middot; Python</span>
-                        <span class="work-more"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></span>
-                    </button>
-                    <div class="work-details" id="work-details-4">
+                        <span class="work-meta">
+                            <span class="work-tags">Django &middot; Python</span>
+                            <a href="https://thakur7985.github.io/CMS-Frontend/" class="work-live" target="_blank" rel="noopener">See website <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </span>
+                        <button type="button" class="work-toggle" aria-expanded="false" aria-controls="work-details-5"><span class="work-more-label">View more</span><span class="work-plus" aria-hidden="true"></span></button>
+                    </div>
+                    <div class="work-details" id="work-details-5">
                         <div class="work-details-inner">
                             <img class="work-thumb" src="assets/Image/College-Management-System.webp" alt="College Management System" loading="lazy">
                             <div class="work-text">
@@ -198,6 +241,7 @@
                                     <li>Built with Django to manage student records and course information in one place.</li>
                                     <li>Includes a testimonials module for showcasing student feedback.</li>
                                 </ul>
+                                <a href="https://thakur7985.github.io/CMS-Frontend/" class="work-link" target="_blank" rel="noopener">See website <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
