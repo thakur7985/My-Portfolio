@@ -292,3 +292,22 @@ function fitBrandName() {
 fitBrandName();
 window.addEventListener('resize', fitBrandName);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBrandName);
+
+
+// In-page links (e.g. hero "View projects") scroll smoothly.
+// Done in JS on purpose: CSS scroll-behavior: smooth breaks GSAP ScrollTrigger measurements.
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    });
+});
+
+
+// Footer copyright year stays current
+document.querySelectorAll('.year').forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+});

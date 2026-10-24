@@ -113,7 +113,9 @@
         var tl = heroTl = gsap.timeline({ paused: preloaderActive, defaults: { ease: 'power4.out' } });
 
         tl.from('.hero-eyebrow', { y: 20, autoAlpha: 0, duration: 0.6 })
-          .from(chars, { yPercent: 120, rotate: 6, duration: 1, stagger: 0.018 }, '-=0.3');
+          .from('.hero-name', { y: 30, autoAlpha: 0, duration: 0.7 }, '-=0.35')
+          .from(chars, { yPercent: 120, rotate: 6, duration: 1, stagger: 0.018 }, '-=0.4')
+          .from('.hero-actions > *', { y: 24, autoAlpha: 0, duration: 0.6, stagger: 0.1 }, '-=0.5');
 
         // Hero drifts up and fades as you scroll away
         gsap.to('#home .home-text', {
@@ -217,6 +219,21 @@
         });
     }
 
+    // ---- Experience: line draws down as you scroll, dots pop, cards slide in ----
+    if (document.querySelector('.timeline')) {
+        gsap.fromTo('.timeline', { '--line': 0 }, {
+            '--line': 1, ease: 'none',
+            scrollTrigger: { trigger: '.timeline', start: 'top 75%', end: 'bottom 60%', scrub: true }
+        });
+        gsap.utils.toArray('.tl-item').forEach(function (item) {
+            gsap.timeline({ scrollTrigger: { trigger: item, start: 'top 82%' } })
+                .from(item.querySelector('.tl-dot'), { scale: 0, duration: 0.5, ease: 'back.out(3)' })
+                .from(item.querySelector('.tl-date'), { x: -24, autoAlpha: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
+                .from(item.querySelector('.tl-card'), { x: 50, autoAlpha: 0, duration: 0.8, ease: 'power3.out' }, 0.15)
+                .from(item.querySelectorAll('.tl-points li'), { y: 14, autoAlpha: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out' }, 0.45);
+        });
+    }
+
     // ---- Projects: rows draw in ----
     gsap.utils.toArray('.work-item').forEach(function (item) {
         gsap.timeline({ scrollTrigger: { trigger: item, start: 'top 90%' } })
@@ -233,7 +250,7 @@
             // Content below moves when a panel opens/closes, so re-measure triggers
             setTimeout(function () { ScrollTrigger.refresh(); }, 650);
             if (!item.classList.contains('open')) return;
-            gsap.fromTo(item.querySelectorAll('.work-thumb, .work-intro, .work-points li, .work-link'),
+            gsap.fromTo(item.querySelectorAll('.work-thumb, .work-intro, .work-points li, .work-links, .work-text > .work-link'),
                 { y: 20, autoAlpha: 0 },
                 { y: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out', stagger: 0.07, delay: 0.15 });
         });
@@ -318,7 +335,7 @@
 
     // ---- Magnetic buttons (mouse only) ----
     if (window.matchMedia('(pointer: fine)').matches) {
-        gsap.utils.toArray('.header-btn, .gts, .social-link, .about-cta, .contact-submit, .footer-icon').forEach(function (btn) {
+        gsap.utils.toArray('.header-btn, .gts, .hero-btn, .social-link, .about-cta, .contact-submit, .footer-icon').forEach(function (btn) {
             btn.addEventListener('mousemove', function (e) {
                 var r = btn.getBoundingClientRect();
                 gsap.to(btn, {

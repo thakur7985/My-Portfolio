@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Inter, Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2226"/>
+      <stop offset="1" stop-color="#0a161c"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#4fd89b"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+
+  <!-- title -->
+  <circle cx="46" cy="44" r="5" fill="#4fd89b"/>
+  <text x="60" y="49" font-size="14" font-weight="700" letter-spacing="2" fill="#4fd89b">EVERY REQUEST, FOUR CHECKS</text>
+  <text x="40" y="76" font-size="13" fill="#a7b4bc">Multi-tenant RBAC in the AI Construction ERP &amp; CRM (Django / DRF)</text>
+
+  <!-- row 1: the checks -->
+  <g font-size="17" font-weight="700" fill="#f5f7f8">
+    <rect x="40" y="104" width="150" height="96" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#4fd89b" stroke-opacity="0.45"/>
+    <text x="58" y="138">1 · Request</text>
+    <text x="58" y="162" font-size="13" font-weight="400" fill="#a7b4bc">JWT authentication</text>
+
+    <rect x="230" y="104" width="150" height="96" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#4fd89b" stroke-opacity="0.45"/>
+    <text x="248" y="138">2 · Tenant</text>
+    <text x="248" y="162" font-size="13" font-weight="400" fill="#a7b4bc">which company?</text>
+    <text x="248" y="180" font-size="13" font-weight="400" fill="#a7b4bc">data isolated</text>
+
+    <rect x="420" y="104" width="150" height="96" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#4fd89b" stroke-opacity="0.45"/>
+    <text x="438" y="138">3 · Module</text>
+    <text x="438" y="162" font-size="13" font-weight="400" fill="#a7b4bc">enabled for this</text>
+    <text x="438" y="180" font-size="13" font-weight="400" fill="#a7b4bc">tenant?</text>
+
+    <rect x="610" y="104" width="150" height="96" rx="14" fill="#4fd89b" fill-opacity="0.1" stroke="#4fd89b"/>
+    <text x="628" y="138">4 · Role</text>
+    <text x="628" y="162" font-size="13" font-weight="400" fill="#a7b4bc">view · create · edit</text>
+    <text x="628" y="180" font-size="13" font-weight="400" fill="#a7b4bc">delete · approve</text>
+  </g>
+  <g stroke="#4fd89b" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="192" y1="152" x2="226" y2="152"/>
+    <line x1="382" y1="152" x2="416" y2="152"/>
+    <line x1="572" y1="152" x2="606" y2="152"/>
+    <path d="M685 202V262" fill="none"/>
+    <line x1="418" y1="314" x2="386" y2="314"/>
+  </g>
+
+  <!-- row 2: API + data -->
+  <g font-size="17" font-weight="700" fill="#f5f7f8">
+    <rect x="420" y="266" width="340" height="96" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#4fd89b" stroke-opacity="0.45"/>
+    <text x="440" y="300">DRF API</text>
+    <text x="440" y="324" font-size="13" font-weight="400" fill="#a7b4bc">tenant-scoped querysets</text>
+    <text x="440" y="342" font-size="13" font-weight="400" fill="#a7b4bc">React dashboard on top · Docker</text>
+
+    <rect x="40" y="266" width="340" height="96" rx="14" fill="#ffffff" fill-opacity="0.04" stroke="#4fd89b" stroke-opacity="0.45"/>
+    <text x="60" y="300">PostgreSQL · shared DB</text>
+    <text x="60" y="324" font-size="13" font-weight="400" fill="#a7b4bc">customers · projects · sites · BOQ</text>
+    <text x="60" y="342" font-size="13" font-weight="400" fill="#a7b4bc">labour · materials · expenses · payments</text>
+  </g>
+
+  <!-- notes -->
+  <g font-size="13">
+    <rect x="40" y="398" width="340" height="56" rx="12" fill="none" stroke="#5b7fb8" stroke-opacity="0.6" stroke-dasharray="5 5"/>
+    <text x="58" y="422" font-weight="700" fill="#f5f7f8">Super Admin</text>
+    <text x="58" y="441" fill="#a7b4bc">switches modules on / off per tenant</text>
+
+    <rect x="420" y="398" width="340" height="56" rx="12" fill="none" stroke="#5b7fb8" stroke-opacity="0.6" stroke-dasharray="5 5"/>
+    <text x="438" y="422" font-weight="700" fill="#f5f7f8">Any check fails</text>
+    <text x="438" y="441" fill="#a7b4bc">request is rejected before it touches data</text>
+  </g>
+</svg>
